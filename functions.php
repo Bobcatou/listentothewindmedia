@@ -270,3 +270,43 @@ function rw_add_enqueue_jquery_in_footer() {
 add_action( 'init', 'rw_add_enqueue_jquery_in_footer' );
 
 
+
+
+
+
+
+
+
+
+
+
+//* Enqueue EQCSS
+// http://elementqueries.com/
+add_action( 'wp_enqueue_scripts', 'sk_enqueue_scripts' );
+function sk_enqueue_scripts() {
+
+	wp_enqueue_script( 'EQCSS', get_stylesheet_directory_uri() . '/js/EQCSS.min.js', '', '', true );
+
+}
+
+// Register bottom-flyout widget area
+genesis_register_widget_area(
+	array(
+		'id'		  => 'bottom-flyout',
+		'name'		  => __( 'Bottom Flyout', 'my-theme-text-domain' ),
+		'description' => __( 'Widget(s) placed here will appear on scrolling down from bottom right', 'my-theme-text-domain' ),
+));
+
+// Display bottom-flyout widget area
+add_action( 'wp_footer', 'sk_bottom_flyout' );
+function sk_bottom_flyout() {
+
+	genesis_widget_area( 'bottom-flyout', array(
+		'before'	=> '<div class="bottom-flyout">',
+		'after'		=> '</div>',
+	));
+
+}
+
+
+
