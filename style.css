@@ -2395,3 +2395,90 @@ h1.entry-title {margin-top: 20px; text-align: center;}
 }
 
 
+
+
+
+
+
+/*Sridhar's flyout CTA */
+
+
+.bottom-flyout {
+	background-color: #0069c4;
+	padding: 20px;
+	overflow: hidden;
+}
+
+@media only screen and (min-width: 500px) {
+
+	.bottom-flyout {
+		width: 400px;
+		max-width: 100%;
+		position: fixed;
+		bottom: 0;
+		right: -350px;
+		opacity: 0;
+		transition: all .5s ease-in-out;
+		box-shadow: rgba(0,0,0,.15) 0 5px 15px;
+	}
+
+}
+
+.bottom-flyout .enews-widget .widget-title {
+	text-align: center;
+}
+
+/* To color the enews widget title and paragraph text */
+/*.bottom-flyout .enews-widget .widget-title,
+.bottom-flyout .enews-widget {
+	color: #fff;
+}*/
+
+.bottom-flyout .enews-widget input {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 15px;
+	margin-bottom: 0;
+}
+
+.bottom-flyout .enews-widget p {
+	font-size: 15px;
+}
+
+.bottom-flyout .enews-widget input[type="email"] {
+	float: none;
+	width: 100%;
+}
+
+.bottom-flyout .enews-widget input[type="submit"] {
+	float: right;
+	width: 40%;
+	margin-top:20px;
+}
+
+@element 'html,body' and (min-scroll-y: 1050px) and (max-scroll-y: 90%) and (min-width: 500px) {
+	.bottom-flyout {
+		right: 0;
+		pointer-events: all;
+		opacity: 1;
+  }
+
+
+.enews-widget input[type="submit"] {
+    background-color: #77b23e;
+    color: #fff;
+    margin: 0;
+    width: 100%;
+}
+
+
+}
+
+
+
+
+
+
+
+
+
